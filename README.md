@@ -1,5 +1,11 @@
 # Disaster Response Pipeline Project
 
+##Project Details
+This project predicts the viability of messages received at the time of disasters and classifies the message into 36 categories that help the response teams to decide the appropriate action to take
+
+## Note : 
+The model uses GridSearchCV to find the best parameter. But it has been commented out since it takes a lot of time to build the model. User can choose to uncomment the respective portion in models/train_classifier.py file, under build_model function.
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
