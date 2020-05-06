@@ -4,12 +4,12 @@ from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
-	'''
+    '''
     input:
-        messages_filepath: The path of messages dataset.
-        categories_filepath: The path of categories dataset.
+    messages_filepath: The path of messages dataset.
+    categories_filepath: The path of categories dataset.
     output:
-        df: The merged dataset
+    df: The merged dataset
     '''
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
@@ -19,11 +19,11 @@ def load_data(messages_filepath, categories_filepath):
 
 def clean_data(df):
 	
-	'''
+    '''
     input:
-        df: The merged dataset in previous step.
+    df: The merged dataset in previous step.
     output:
-        df: Dataset after cleaning.
+    df: Dataset after cleaning.
     '''
     
     # create a dataframe of the 36 individual category columns

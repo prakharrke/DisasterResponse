@@ -84,7 +84,33 @@ def evaluate_model(model, X_test, Y_test, category_names):
     y_pred = model.predict(X_test)
     #print(classification_report(y_pred, Y_test.values, target_names=category_names))
     # print raw accuracy score 
-    print('Accuracy Score: {}'.format(np.mean(Y_test.values == y_pred)))    
+    print('Accuracy Score: {}'.format(np.mean(Y_test.values == y_pred)))   
+
+    print("**** Following are F1, precision and recall for the obtained predictions and the test set ****") 
+    compute_report(Y_test, y_pred, category_names)
+
+def compute_report(y_test, y_pred, category_names) : 
+    '''
+    Function to output f1 score, precision and recall for each category in the test set
+    Input: test set and predicted result of test set given by model
+    Output: No output
+    '''
+    y_test_df = pd.DataFrame()
+    y_test_df = pd.DataFrame(y_test)
+    y_test_df.columns = category_names
+    y_test_df
+
+    y_pred_df = pd.DataFrame()
+    y_pred_df = pd.DataFrame(y_pred)
+    y_pred_df.columns = category_names
+    y_pred_df
+
+    for category in category_names : 
+        y_test_col = y_test_df[category]
+        y_pred_col = y_pred_df[category]
+        print(category)
+        print(classification_report(y_test_col, y_pred_col))
+
 
 
 def save_model(model, model_filepath):
